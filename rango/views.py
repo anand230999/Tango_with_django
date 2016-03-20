@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 def index(request):
-    return HttpResponse("Rango says hey there world! <a href="+"/rango/about"+">About</a> <html>")
+    return render(request, 'rango/index.html',{'boldmessage':"I am a bold font from the context"})
 def about(request):
-    return HttpResponse("<html> Rango says here is the about page. <a href="+"/rango/"+"> Home </a> <html>")
+    return render(request, 'rango/about.html',{})  
