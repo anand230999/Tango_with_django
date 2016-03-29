@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load staticfiles %}
-<html>
-    <head>
-        <title> About </title>
-    </head>
-    
-    <body>
-        Rango says here is the about page. 
+{% block title %}About{% endblock %}
+{% block body_block %}
+    <div class="page-header">
+            <h1>About</h1>
+        </div>
+        <p><strong />Rango says here is the about page.</p>
+        </div>
+        <button id="about-btn">Click Me - I'm javascript on speed</button>
+        <p>This is a example</p>
+        <p>This another example</p>
+        </button>
+        <div id="msg">Hello</div>
         <a href="/rango/"> Home </a>
-        <img src="{% static "images/anand.jpg" %}" alt="Picture of anand" />
-    </body>
-</html>
+{% endblock %}

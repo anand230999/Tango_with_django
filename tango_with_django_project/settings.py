@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
+    'bootstrap_toolkit',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +50,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
+
+LOGIN_URL = '/accounts/login/'
 
 ROOT_URLCONF = 'tango_with_django_project.urls'
 
@@ -78,6 +87,11 @@ USE_L10N = True
 USE_TZ = True
 
 
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT= '/rango/'
+LOGIN_URL = '/accounts/login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_PATH = os.path.join(BASE_DIR,'static')

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_toolkit %}
+
+{% block title %}Register{% endblock %}
+
+{% block body_block %}
+        <form id="register_form" method="post" action=".">
+           <h2 class="form-signin-heading">Register Here</a></h2>
+                {% csrf_token %}
+                {{ form|as_bootstrap }}
+                <br/>
+                <button class=”btn btn-primary” type=”submit” name=”submit”>Register</button>
+        </form>
+{% endblock %}
